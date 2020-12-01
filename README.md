@@ -19,14 +19,6 @@ The purpose of this project is to implement a web application that works like Ne
 
 ## List of services ##
 
-### Youtube ###
-
-- Allows you to watch a video.
-
-- View the number of views.
-
-- Lets see the likes and dislike.
-
 ### Weather ###
 
 - Allows you to see the temperature of a city.
