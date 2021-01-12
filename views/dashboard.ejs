@@ -1,22 +1,47 @@
 <!DOCTYPE html>
 <html lang="en" style="height: 100%; margin: 0;">
+<link href="https://fonts.googleapis.com/css?family=Archivo+Black&display=swap" rel="stylesheet">
 
 <%- include('header'); -%>
 
-<body>
+<body onload="startTime()">
+    <div id="clock" class="topcorner"></div>
+
+    <script>
+        function startTime() {
+          var today = new Date();
+          var h = today.getHours();
+          var m = today.getMinutes();
+          var s = today.getSeconds();
+          m = checkTime(m);
+          s = checkTime(s);
+          document.getElementById('clock').innerHTML =
+          h + ":" + m + ":" + s;
+          var t = setTimeout(startTime, 500);
+        }
+        // add zero in front of numbers < 10
+        function checkTime(i) {
+          if (i < 10) {i = "0" + i};  
+          return i;
+        }
+    </script>
+    
     <div class="wrapper">
         <nav id="sidebar">
-            <ul class="list-unstyled components">
+            <ul>
                 <li>
-                    <h3> Dashboard </h3>
+                    <h3 style="font-weight: bold;"> Dashboard </h3>
                 </li>
             </ul>
-            <ul class="list-unstyled components">
-                <li>
-                    <a href="#" id="weatherButton"><i class="fas fa-cloud-sun"></i> Weather</a>
+            <ul>
+                <li style="font-weight: bold;">
+                    <a href="#" id="weatherButton"><i class="fas fa-cloud-sun" style="font-weight: bold;"></i> Weather</a>
                 </li>
-                <li>
+                <li style="font-weight: bold;">
                     <a href="#" id="cinemaButton"><i class="fas fa-film"></i> Movie</a>
+                </li>
+                <li style="font-weight: bold;">
+                    <a href="#" id="musicButton"><i class="fas fa-music" ></i> Youtube </a>
                 </li>
             </ul>
             <ul class="list-unstyled components">
@@ -45,7 +70,7 @@
                 </script>
                 <div class="grid-stack">
                     <script type="text/javascript">
-                        loadAllWidgets()
+                        loadWidgets()
                     </script>
                 </div>
                 <script type="text/javascript">
@@ -114,6 +139,7 @@
         </div>
 
 
+
         <div class="hiddenClass">
             <div class="cinemaClass" id="cinemaClass">
                 <h1><strong><i class="fas fa-film"></i> Cinema Widget</strong></h1>
@@ -122,7 +148,7 @@
                     <label for="">Get movie information by name -> </label>
                     <input type="hidden" name="widgetName" value="cinema">
                     <input type="hidden" name="widgetRole" value="getMovieInformation">
-                    <input type="text" placeholder="Ex : Joker" name="widgetContent" id="videoId" required>
+                    <input type="text" placeholder="Ex: Drunk" name="widgetContent" id="videoId" required>
                     <input type="submit" value="Create">
                 </form>
             </div>
@@ -139,6 +165,37 @@
                 })
             })
         </script>
+
+    <div class="hiddenClass">
+        <div class="musicClass" id="musicClass">
+            <h1><strong><i class="fas fa-music"></i> Youtube Widget</strong></h1>
+            <button id="removeWindowMusicButton">X</button>
+            <!-- <form action="/WidgetMusic" method="POST"> -->
+            <form action="/saveWidget" method="POST">
+                <label for=""> Search for a youtube video to watch -> </label>
+                <input type="hidden" name="widgetName" value="artist">
+                <input type="hidden" name="widgetRole" value="getArtist">
+                <input type="text" placeholder="Ex: Mechant niska" name="widgetContent" id="artistId" required>
+                <input type="submit" value="Create">
+            </form>
+        </div>
+    </div>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#musicButton').on('click', function () {
+                $('#musicClass').show()
+                $('#mainContent').fadeTo("slow", 0.4)
+                })
+            $('#removeWindowMusicButton').on('click', function () {
+                $('#musicClass').hide()
+                $('#mainContent').fadeTo("slow", 1)
+            })
+        })
+    </script>
+
+    <iframe id="myIframe" width="560" height="315" frameborder="0" allowfullscreen style="position:relative; top: 160px; left: 0px;"></iframe>
+
+
 </body>
 
 </html>

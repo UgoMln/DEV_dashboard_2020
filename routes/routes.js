@@ -14,7 +14,7 @@ router.get('/register', function (req, res) {
     res.render('register');
 });
 
-router.post('/', (req, res, next) => {
+router.post('/login', (req, res, next) => {
     passport.authenticate('login', {
         successRedirect: '/dashboard',
         failureRedirect: '/',
@@ -84,6 +84,18 @@ router.post('/saveWidget', (req, res) => {
     res.redirect('/dashboard')
 })
 
+router.post('/WidgetMusic', (req, res) => {
+    var dataWidget = req.body
+    var user = req.user
+    var realUser
+    if (user.local) {
+        realUser = user.local
+    } else if (user.facebook) {
+        realUser = user.facebook
+    }
+    res.redirect('/dashboard')
+})
+
 router.post('/editWidget', (req, res) => {
     var widgetToChange = req.body.toChange
     var widgetNewValue = req.body.newValue
@@ -114,10 +126,10 @@ router.post('/editWidget', (req, res) => {
 router.get('/loadWidget', (req, res) => {
     var user = req.user
     var realUser
-    if (req.user.local)
-        realUser = req.user.local
-    else if (req.user.facebook)
-        realUser = req.user.facebook
+    if (user.local)
+        realUser = user.local
+    else if (user.facebook)
+        realUser = user.facebook
     var widgets = realUser.widgets
     res.send(JSON.stringify(widgets))
 })

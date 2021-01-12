@@ -11,7 +11,7 @@ function movies(movieName) {
         var first = '<h2>' + title + '</h2>'
         var second = '<h3 style="margin-top: 10px"><strong><label>Stars :</label> ' + note + '</strong></h3>'
         var secondBis = '<h3><strong><label>Release date :</label> ' + movieInformation.release_date + '</strong></i></h3>'
-        var secondBisBis = '<h3><strong><label>Entry number :</label> ' + movieInformation.popularity + '</strong></i></h3>'
+        var secondBisBis = '<h3><strong><label>Popularity :</label> ' + movieInformation.popularity + '</strong></i></h3>'
         this.grid = $('.grid-stack').data('gridstack')
         var node = {
             x: 3,
@@ -22,7 +22,7 @@ function movies(movieName) {
         var elementId = 'id="' + movieName + '"'
         var valueID = 'value="' + movieName + '"'
         var button = '<form action="/deleteWidget" method="POST"><input type="hidden" name="toRemove" ' + valueID + '></input><button type="submit" class="trashButton"></button></form>'
-        var createElement = '<div class="grid-stack-item" ' + elementId + ' style="background-color: grey; margin: 10px; border-radius: 10px;"><i style="position:absolute; top:3px; right: 4px"></i><button id="editButton" class="editButton" onclick="editWidget(this.parentNode.id)"></button><div class="grid-stack-item-content" style="padding: 20px; text-align: center">' + button + img + second + secondBis + secondBisBis + '</div></div>'
+        var createElement = '<div class="grid-stack-item" ' + elementId + ' style="background-image: url(https://amyshealthybaking.com/wp-content/uploads/2018/03/stovetop-air-popped-popcorn-1618.jpg); margin: 10px; border-radius: 10px;"><i style="position:absolute; top:3px; right: 4px"></i><button id="editButton" class="editButton" onclick="editWidget(this.parentNode.id)"></button><div class="grid-stack-item-content" style="padding: 20px; text-align: center">' + button + img + second + secondBis + secondBisBis + '</div></div>'
         this.grid.addWidget($(createElement), node.x, node.y, node.width, node.height)
     })
 }

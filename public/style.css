@@ -53,17 +53,17 @@ height: 350px;
 margin-top: auto;
 margin-bottom: auto;
 width: 400px;
-background-color: rgb(189, 85, 219) !important;
+background-color: rgb(192, 192, 192) !important;
 }
 
 .social_icon span{
 font-size: 60px;
 margin-left: 10px;
-color: black;
+color: white;
 }
 
 .social_icon span:hover{
-color: white;
+color: grey;
 cursor: pointer;
 }
 
@@ -126,7 +126,7 @@ margin-left: 4px;
 
 body {
     font-family: 'Poppins', sans-serif;
-    background: #576eff;
+    background: black;
 }
 
 h1 {
@@ -147,23 +147,23 @@ a, a:hover, a:focus {
 }
 
 #sidebar {
-      background: #BD55DB;
+      background: #c0c0c0;
     color: white;
     transition: all 0.3s;
 }
 
 #sidebar .sidebar-header {
     padding: 20px;
-    background: #BD55DB;
+    background: #c0c0c0;
 }
 
 #sidebar ul.components {
     padding: 20px 0;
-    border-bottom: 1px solid #BD55DB;
+    border-bottom: 1px solid #c0c0c0;
 }
 
 #sidebar ul p {
-    color: #576eff;
+    color: white;
     padding: 10px;
 }
 
@@ -173,7 +173,7 @@ a, a:hover, a:focus {
     display: block;
 }
 #sidebar ul li a:hover {
-    color: #576eff;
+    color: white;
     background: black;
 }
 
@@ -185,7 +185,7 @@ a, a:hover, a:focus {
 ul ul a {
     font-size: 0.9em !important;
     padding-left: 30px !important;
-    background: #576eff;
+    background: whitesmoke;
 }
 
 #mainContent {
@@ -200,7 +200,7 @@ ul ul a {
     left: 300px;
     top: 50px;
     border-radius: 10px;
-    background-color: #BD55DB;
+    background-image: url("https://remeng.rosselcdn.net/sites/default/files/dpistyles_v2/ena_16_9_extra_big/2020/05/03/node_148401/11872700/public/2020/05/03/B9723367244Z.1_20200503152130_000%2BG6FFV57MO.1-0.jpg?itok=yfH9vhJS1588512099");
     border-radius: 10px;
     text-align: center;
     padding: 10px;
@@ -209,7 +209,7 @@ ul ul a {
 }
 
 .weatherClass h1 {
-    color: white;
+    color: black;
 }
 
 .weatherClass button {
@@ -226,15 +226,61 @@ ul ul a {
 }
 
 .weatherClass input[type="text"] {
-    border: 1px solid white;
+    border: 1px solid black;
     border-radius: 5px;
     padding: 5px;
 }
 
 .weatherClass input[type="submit"] {
     padding: 10px;
-    border: 1px solid white;
+    border: 1px solid black;
+    color: black;
+    border-radius: 10px;
+    margin-left: 10px;
+}
+
+.musicClass {
+    position: absolute;
+    width: 600px;
+    height: 400px;
+    left: 300px;
+    top: 50px;
+    border-radius: 10px;
+    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS63rShGaDx7_Y6JURjFiRUzvUHia6_R_gCWw&usqp=CAU");
+    border-radius: 10px;
+    text-align: center;
+    padding: 10px;
+    display: none;
+    z-index: 1;
+}
+
+.musicClass h1 {
     color: white;
+}
+
+.musicClass button {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    color: white;
+    border: 1px solid white;
+    border-radius: 30px;
+}
+
+.musicClass form {
+    margin-top: 60px;
+}
+
+.musicClass input[type="text"] {
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.musicClass input[type="submit"] {
+    padding: 10px;
+    border: 1px solid black;
+    color: black;
     border-radius: 10px;
     margin-left: 10px;
 }
@@ -245,7 +291,7 @@ ul ul a {
     height: 400px;
     left: 300px;
     top: 50px;
-    background-color: #BD55DB;
+    background-image: url(https://amyshealthybaking.com/wp-content/uploads/2018/03/stovetop-air-popped-popcorn-1618.jpg);
     border-radius: 10px;
     text-align: center;
     padding: 10px;
@@ -253,7 +299,7 @@ ul ul a {
 }
 
 .cinemaClass h1 {
-    color: white;
+    color:black;
 }
 
 .cinemaClass button {
@@ -271,7 +317,7 @@ ul ul a {
 }
 
 .cinemaClass label {
-    color: white;
+    color: black;
 }
 
 .cinemaClass input[type="text"] {
@@ -293,7 +339,7 @@ ul ul a {
     padding: 20px;
     border: 1px solid white;
     border-radius: 10px;
-    background-color: #BD55DB;
+    background-color: #c0c0c0;
     position: absolute;
     right: 100px;
     top: 50px;
@@ -304,7 +350,7 @@ ul ul a {
 
 .editClass button {
     background-color: white;
-    color: #BD55DB;
+    color: #c0c0c0;
     position: absolute;
     right: 2px;
     top: 2px;
@@ -342,3 +388,42 @@ ul ul a {
     top: 2px;
     left: 14px;
 }
+
+:root {
+    --shadow-color: #FF9E9E;
+    --shadow-color-light: white;
+  }
+  
+  * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+
+.topcorner{
+    font-size: 65px;
+    color: white;
+    animation: neon 3s infinite;
+    position: absolute;
+    top:800px;
+    right:100px;
+ }
+
+
+ @keyframes neon {
+    0% {
+      text-shadow: -1px -1px 1px var(--shadow-color-light), -1px 1px 1px var(--shadow-color-light), 1px -1px 1px var(--shadow-color-light), 1px 1px 1px var(--shadow-color-light),
+      0 0 3px var(--shadow-color-light), 0 0 10px var(--shadow-color-light), 0 0 20px var(--shadow-color-light),
+      0 0 30px var(--shadow-color), 0 0 40px var(--shadow-color), 0 0 50px var(--shadow-color), 0 0 70px var(--shadow-color), 0 0 100px var(--shadow-color), 0 0 200px var(--shadow-color);
+    }
+    50% {
+      text-shadow: -1px -1px 1px var(--shadow-color-light), -1px 1px 1px var(--shadow-color-light), 1px -1px 1px var(--shadow-color-light), 1px 1px 1px var(--shadow-color-light),
+      0 0 5px var(--shadow-color-light), 0 0 15px var(--shadow-color-light), 0 0 25px var(--shadow-color-light),
+      0 0 40px var(--shadow-color), 0 0 50px var(--shadow-color), 0 0 60px var(--shadow-color), 0 0 80px var(--shadow-color), 0 0 110px var(--shadow-color), 0 0 210px var(--shadow-color);
+    }
+    100% {
+      text-shadow: -1px -1px 1px var(--shadow-color-light), -1px 1px 1px var(--shadow-color-light), 1px -1px 1px var(--shadow-color-light), 1px 1px 1px var(--shadow-color-light),
+      0 0 3px var(--shadow-color-light), 0 0 10px var(--shadow-color-light), 0 0 20px var(--shadow-color-light),
+      0 0 30px var(--shadow-color), 0 0 40px var(--shadow-color), 0 0 50px var(--shadow-color), 0 0 70px var(--shadow-color), 0 0 100px var(--shadow-color), 0 0 200px var(--shadow-color);
+    }
+  }
